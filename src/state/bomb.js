@@ -1,26 +1,26 @@
 import React from 'react';
 
 class Bomb extends React.Component {
-    constructor(props){
-    super(props)
-    this.state = {
-        count: 0
+    constructor(props) {
+        super(props)
+        this.state = {
+            count: 0
         }
     }
 
     toggleTickTock = () => {
         let title = "tick ";
-        return (this.state.count < 9) ? title = (this.state.count % 2 === 0)? title : "tock " : title = "Shit went Boom ";   
-    }   
+        return (this.state.count < 9) ? title = (this.state.count % 2 === 0) ? title : "tock " : title = "Shit went Boom ";
+    }
 
     handleTickTockBoom = () => {
         let increment = this.state.count + 1;
-        this.setState({count: increment})
+        this.setState({ count: increment })
     }
-    ticker = () => {setInterval(this.handleTickTockBoom,1000)};
-    render(){
+    ticker = () => { setInterval(this.handleTickTockBoom, 1000) };
+    render() {
         // console.log(this.state.timer);
-        return(
+        return (
             <div>
                 <button onClick={this.ticker}>Start Timer</button>
                 <p className="bomb">{this.toggleTickTock()}{this.state.count}</p>
