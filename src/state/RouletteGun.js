@@ -25,7 +25,7 @@ class RouletteGun extends React.Component {
         chamber: randomChamber,
         spinningTheChamber: false,
       })
-    }, 1000)
+    }, 500)
   }
 
   renderDisplay() {
